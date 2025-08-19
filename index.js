@@ -92,16 +92,16 @@ app.use("/api/student", studentRoutes);
 
 
 // Winston Logger Setup
-  const logger = winston.createLogger({
-    level: 'info',
-    transports: [
-      new winston.transports.Console(),
-      new winston.transports.File({ filename: 'logs/error.log', level: 'error' })
-    ]
-  });
+  // const logger = winston.createLogger({
+  //   level: 'info',
+  //   transports: [
+  //     new winston.transports.Console(),
+  //     new winston.transports.File({ filename: 'logs/error.log', level: 'error' })
+  //   ]
+  // });
   
-  logger.info('Server started');
-  logger.error('Something went wrong');
+  // logger.info('Server started');
+  // logger.error('Something went wrong');
 
 // Root endpoint
 app.get("/", (req, res) => {
