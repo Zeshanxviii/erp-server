@@ -54,7 +54,7 @@ app.use('/api/*/login', authLimiter);
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
     ? process.env.FRONTEND_URL?.split(',') || ['http://localhost:3000']
-    : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173','erp-college-psi.vercel.app'],
+    : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173','https://erp-college-psi.vercel.app'],
   credentials: true,
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
