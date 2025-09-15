@@ -51,14 +51,18 @@ app.use(generalLimiter);
 app.use('/api/*/login', authLimiter);
 
 // CORS configuration
+// const corsOptions = {
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? process.env.FRONTEND_URL?.split(',') || ['http://localhost:3000']
+//     : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173','https://erp-college-psi.vercel.app'],
+//   credentials: true,
+//   optionsSuccessStatus: 200,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// };
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL?.split(',') || ['http://localhost:3000']
-    : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173','https://erp-college-psi.vercel.app'],
+  origin: ['https://erp-college-psi.vercel.app'],
   credentials: true,
-  optionsSuccessStatus: 200,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
